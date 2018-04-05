@@ -11,17 +11,17 @@ var TEXT = 20;
 var BAR_HEIGHT = -(CLOUD_HEIGHT - TEXT - 100);
 var COLORS = ['#0000FF', '#808080', '#D3D3D3'];
 
-var renderCloud = function(ctx, x, y, color) {
+var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-var renderText = function(ctx, text, x, y) {
+var renderText = function (ctx, text, x, y) {
   ctx.strokeText(text, x, y);
 };
 
 // находим максимальный элемент массива
-var getMaxElement = function(arr) {
+var getMaxElement = function (arr) {
   var maxElement = arr[0];
   for (var i = 1; i < arr.length; i++) {
     if (arr[i] > maxElement) {
@@ -47,7 +47,7 @@ window.renderStatistics = function (ctx, names, times) {
       return '#FF0000';
     }
     return COLORS[i];
-  }
+  };
 
   for (var i = 0; i < names.length; i++) {
     ctx.fillStyle = '#000';
@@ -57,5 +57,5 @@ window.renderStatistics = function (ctx, names, times) {
 
     ctx.fillStyle = getColor();
     ctx.fillRect(CLOUD_X + GAP + (BAR_WIDTH + GAP) * i, CLOUD_HEIGHT - TEXT, BAR_WIDTH, (BAR_HEIGHT * times[i]) / maxTime);
-  };
-}
+  }
+};
